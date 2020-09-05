@@ -15,10 +15,10 @@ def pypy(path,args=False):
 #the first argument is the path
 #the second is arguments seperated by \n
 """
-print(cargo("/home/parsa/AAA_RUST/hello_world","a\nb\n12"))
+print(pypy("/home/parsa/AAA_RUST/hello_world.py","a\nb\n12"))
 """
 #arguments can be ignored if there is no
 """
-print(cargo("/home/parsa/AAA_RUST/hello_world"))
+print(pypy("/home/parsa/AAA_RUST/hello_world.py"))
 """
 #returns a string seperated by \n 
