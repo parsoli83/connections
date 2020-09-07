@@ -13,7 +13,7 @@ def pypy(path,args=False):
         data, temp = pipe() 
         write(temp, bytes(to_string(args), "utf-8")); 
         close(temp) 
-    s = check_output("cd "+path+";cargo run", stdin = data, shell = True) 
+    s = check_output("pypy3 "+path, stdin = data, shell = True) 
     return to_list(s.decode("utf-8"))
 
 #HOW TO USE:
@@ -58,7 +58,7 @@ print(cargo("/home/parsa/AAA_RUST/hello_world"))
 #returns a list of strings
 
 #######################################################################################
-def pypy(path,args=False):
+def python(path,args=False):
     def to_string(l):
         s=""
         for i in l:
@@ -71,17 +71,17 @@ def pypy(path,args=False):
         data, temp = pipe() 
         write(temp, bytes(to_string(args), "utf-8")); 
         close(temp) 
-    s = check_output("cd "+path+";cargo run", stdin = data, shell = True) 
+    s = check_output("python3 "+path, stdin = data, shell = True) 
     return to_list(s.decode("utf-8"))
 
 #HOW TO USE:
 #the first argument is the path
 #the second is the list of arguments
 """
-print(pypy("/home/parsa/AAA_RUST/hello_world.py",["a","b"]))
+print(python("/home/parsa/AAA_RUST/hello_world.py",["a","b"]))
 """
 #arguments can be ignored if there is no
 """
-print(pypy("/home/parsa/AAA_RUST/hello_world.py"))
+print(python("/home/parsa/AAA_RUST/hello_world.py"))
 """
 #returns a list of strings
