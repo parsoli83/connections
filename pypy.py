@@ -13,7 +13,7 @@ def pypy(path,args=False):
         data, temp = pipe() 
         write(temp, bytes(to_string(args), "utf-8")); 
         close(temp) 
-    s = check_output("cd "+path+";cargo run", stdin = data, shell = True) 
+    s = check_output("pypy3 "+path, stdin = data, shell = True) 
     return to_list(s.decode("utf-8"))
 
 #HOW TO USE:
